@@ -13,7 +13,7 @@
         // Prevent placeholder values from submitting
         $(input[0].form).submit(function() {
             if (input.hasClass('placeholder') && input[0].value == input.attr('placeholder')) {
-                input[0].value = '';
+                $(input[0]).val("");
             }
         });
     }
@@ -30,13 +30,13 @@
                     }
                 }
                 this.input.addClass('placeholder');
-                this.input[0].value = this.input.attr('placeholder');
+                $(this.input[0]).val(this.input.attr('placeholder'));
             }
         },
         hide : function() {
             if (this.valueIsPlaceholder() && this.input.hasClass('placeholder')) {
                 this.input.removeClass('placeholder');
-                this.input[0].value = '';
+                $(this.input[0]).val('');
                 if (this.isPassword) {
                     try {
                         this.input[0].setAttribute('type', 'password');
