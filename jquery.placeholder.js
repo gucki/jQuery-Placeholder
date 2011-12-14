@@ -93,6 +93,7 @@
                 // What's even worse, the text cursor disappears
                 // when tabbing between text inputs, here's a fix
                 input.focus(function() {
+                    input.show();
                     if(this.value == "") {
                         var range = this.createTextRange();
                         range.collapse(true);
